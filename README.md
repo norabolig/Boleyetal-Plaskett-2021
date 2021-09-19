@@ -34,3 +34,34 @@ Plotting and Stats File
 -----------------------
 
 `satplot.py` produces all figures in the paper and also prints out some basic stats, such as the medians.
+
+TLEs
+----
+
+`starlink.15JUL2021` are the TLEs for all Starlink satellites on the noted date. This was used for developing the observing plan and is made available by T. S. Kelso at Celestrak.com.
+
+JPL Query
+---------
+
+`get_eph.py` queries JPL Horizons using the TLE file and some in-code information (careful, some of it is project specific). It will produced a `NAME.txt` file, where `NAME` is the name of the satellite. The query contains elevation and azimuth cuts.
+
+Observing Opportunities 
+-----------------------
+
+`dat` is a txt file that contains all of the resulting ephemerides at the time of transt, as `grepped` from the output files of `get_eph.py`.
+
+Observing Plan Rough Cut
+------------------------
+
+`reorder.py` looks through the `dat` file, sorts by UTC, and then develops a preliminary plan to be sent to the telescope operator. Targets are selected so that they are so many minutes apart. The output is the file `plan`. The telescope operator had the final decision on which targets to select, which resulted in the closely related file `plan.ran`. This latter file is the one that has the time spacing noted in the paper. 
+
+Convinience Scripts
+-------------------
+
+When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`.
+
+
+
+
+
+
