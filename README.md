@@ -60,8 +60,3 @@ Convinience Scripts
 
 When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`.
 
-
-
-
-
-
