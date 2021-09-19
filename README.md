@@ -29,3 +29,8 @@ The header is as follows:
 * sto: Sun-Target-Observer angle, essentially the phase angle, in degrees
 * visorsat: bool whether a visorsat or not (inferred)
 * oper: `+` means the satellite was operational at the time of the observations and `-` if it was defunct
+
+Plotting and Stats File
+-----------------------
+
+`satplot.py` produces all figures in the paper and also prints out some basic stats, such as the medians.
