@@ -55,8 +55,25 @@ Observing Plan Rough Cut
 
 `reorder.py` looks through the `dat` file, sorts by UTC, and then develops a preliminary plan to be sent to the telescope operator. Targets are selected so that they are so many minutes apart. The output is the file `plan`. The telescope operator had the final decision on which targets to select, which resulted in the closely related file `plan.ran`. This latter file is the one that has the time spacing noted in the paper. 
 
-Convinience Scripts
+Convenience Scripts
 -------------------
 
-When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`.
+When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`. The file `mcmc.py` runs a fast and simple MCMC to determine the power law formulation of the super(?) diffuse phase function. It reads in `mags-streaks.mcmc`, which is just like `mags-streaks.dat`, but with the outliers commented out.
+
+Calibrated Images
+-----------------
+
+Astrometically calibrated, reduced, and flattened images are in the `calibratedImages` folder. The suffixes have ".new", but they are all fits files. 
+
+Aperture Files
+--------------
+
+Aperture files for the stars used in the photometric calibration. Values are given in "physical coordinates" as defined in DS9, and are arranged as CENTRE_X CENTRE_Y R_IN R_OUT for the apertures.
+
+Region Files
+------------
+
+Region files for DS9, in degrees, giving the details for where the streaks were measured. 
+
+
 
