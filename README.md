@@ -12,6 +12,8 @@ All observations were conducted in the g' filter.
 
 Basic reduction scripts can be found at: https://github.com/norabolig/ABIRL
 
+Astrometric calibration used astrometry.net software, installed and run locally.
+
 Main Photometry File
 --------------------
 
