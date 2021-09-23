@@ -1,7 +1,3 @@
-#
-# Script used to generate the plots in Boley et al. 2021
-# Expects to read in 'mags-streaks.dat'
-#
 import numpy as np
 
 df = np.loadtxt("mags-streaks.dat",skiprows=1,dtype={'names':('Name','magC','magCsig','adu','npix','bkgnd','streak','rate','range','utc','sto','visorsat','oper'),'formats':('U14','f','f','f','f','f','f','f','f','U12','f','U1','U1')})
@@ -91,11 +87,12 @@ ax.scatter(satrange[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='
 ax.scatter(satrange[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(satrange[i],magsRound[i]),ha='center',va= 'center')
-ax.legend(['S','V'],loc='upper left',fontsize=12)
+ax.legend(['S','V'],loc='lower left',fontsize=12)
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.xlabel('Range [km]',fontsize=14)
 plt.ylabel(r"$m_g$",fontsize=16)
+plt.ylim(10.5,4)
 plt.savefig("sats-range.pdf")
 
 sto=df['sto']
@@ -104,11 +101,12 @@ ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black
 ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],magsRound[i]),ha='center',va= 'center')
-ax.legend(['S','V'],loc='upper right',fontsize=12)
+ax.legend(['S','V'],loc='lower right',fontsize=12)
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.xlabel('STO [deg]',fontsize=14)
 plt.ylabel(r"$m_g$",fontsize=16)
+plt.ylim(10.5,4)
 plt.savefig("sats-sto.pdf")
 
 fig,ax=plt.subplots()
@@ -131,13 +129,14 @@ ax.scatter(dates[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='bla
 ax.scatter(dates[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(dates[i],magsRound[i]),ha='center',va= 'center')
-ax.legend(['S','V'],loc='upper right',fontsize=12)
+ax.legend(['S','V'],loc='lower right',fontsize=12)
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
 fig.autofmt_xdate()
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.xlabel('UTC [16 Jul 2021]',fontsize=14)
 plt.ylabel(r"$m_g$",fontsize=16)
+plt.ylim(10.5,4)
 plt.xlim(min(dates)-np.timedelta64(30,'m'),max(dates)+np.timedelta64(30,'m'))
 plt.savefig("sats-time.pdf")
 
@@ -162,9 +161,6 @@ dsphere = diffuseSphere(0.7,sto,satrange)
 dpower  = diffusePower(1.1,sto,satrange,3.1)
 diff = magsRound-dpower
 
-mflag = magsRound < 7.5
-print("Apparent magnitude dispersion of residuals of mags-Heuristic Model (excluding outliers) {} ".format(np.std(diff[mflag])))
-
 fig,ax=plt.subplots()
 ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
 ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
@@ -172,11 +168,12 @@ ax.scatter(sto,dsphere,s=120,color='red',marker='v')
 ax.scatter(sto,dpower,s=120,color='blue',marker='^')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],magsRound[i]),ha='center',va= 'center')
-ax.legend(['S','V','D','P'],loc='upper right',fontsize=12)
+ax.legend(['S','V','D','P'],loc='lower right',fontsize=12)
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.xlabel('STO [deg]',fontsize=14)
 plt.ylabel(r"$m_g$",fontsize=16)
+plt.ylim(10.5,4)
 plt.savefig("sats-sto-diffuse.pdf")
 
 fig,ax=plt.subplots()
@@ -184,13 +181,16 @@ ax.scatter(sto[sflag],diff[sflag],s=200,facecolors='none',edgecolors='black',mar
 ax.scatter(sto[vflag],diff[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],diff[i]),ha='center',va= 'center')
-ax.legend(['S','V'],loc='upper right',fontsize=12)
+ax.legend(['S','V'],loc='lower right',fontsize=12)
 plt.axhline(y=0,color='black',linestyle=':')
 plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.xlabel('STO [deg]',fontsize=14)
 plt.ylabel(r"$m_g$-Model",fontsize=16)
+plt.ylim(5,-1)
 plt.savefig("sats-obs-model.pdf")
+
+
 
 
 plt.show()
