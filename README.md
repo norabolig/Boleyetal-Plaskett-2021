@@ -1,12 +1,12 @@
 # Boleyetal-Plaskett-2021
-Associated data for Boley et al. 2021, Plaskett measurements of Starlink satellites
+Associated data for Boley et al. 2021 (submitted), Plaskett measurements of Starlink satellites
 
 Supplemental Data
 =================
 
 This repo contains supplemental data for Boley et al 2021, _Plaskett 1.8 metre Observations of Starlink Satellites_.
 It is provided for independent assessment, as well as to share details that typically are not included in a paper. 
-If you use information provided here, please cite the Boley et al. 2021 paper.
+If you use information provided here, please cite the Boley et al. 2021 paper (in review, archive link will be posted when available).
 
 All observations were conducted in the g' filter.
 
