@@ -52,7 +52,7 @@ JPL Query
 Observing Opportunities 
 -----------------------
 
-`dat` is a txt file that contains all of the resulting ephemerides at the time of transt, as `grepped` from the output files of `get_eph.py`.
+`dat` is a txt file that contains all of the resulting ephemerides at the time of transit, as `grepped` from the output files of `get_eph.py`.
 
 Observing Plan Rough Cut
 ------------------------
@@ -62,7 +62,7 @@ Observing Plan Rough Cut
 Convenience Scripts
 -------------------
 
-When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`. The file `mcmc.py` runs a fast and simple MCMC to determine the power law formulation of the super(?) diffuse phase function. It reads in `mags-streaks.mcmc`, which is just like `mags-streaks.dat`, but with the outliers commented out.
+When writing the paper, a few convenience scripts were made to print out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`. The file `mcmc.py` runs a fast and simple MCMC to determine the power law formulation of the super(?) diffuse phase function. It reads in `mags-streaks.mcmc`, which is just like `mags-streaks.dat`, but with the outliers commented out.
 
 Calibrated Images
 -----------------
