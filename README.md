@@ -1,12 +1,12 @@
 # Boleyetal-Plaskett-2021
-Associated data for Boley et al. 2021, Plaskett measurements of Starlink satellites
+Associated data for Boley et al. 2021 (submitted), Plaskett measurements of Starlink satellites: http://arxiv.org/abs/2109.12494
 
 Supplemental Data
 =================
 
 This repo contains supplemental data for Boley et al 2021, _Plaskett 1.8 metre Observations of Starlink Satellites_.
 It is provided for independent assessment, as well as to share details that typically are not included in a paper. 
-If you use information provided here, please cite the Boley et al. 2021 paper.
+If you use information provided here, please cite the Boley et al. 2021 paper (http://arxiv.org/abs/2109.12494).
 
 All observations were conducted in the g' filter.
 
@@ -52,7 +52,7 @@ JPL Query
 Observing Opportunities 
 -----------------------
 
-`dat` is a txt file that contains all of the resulting ephemerides at the time of transt, as `grepped` from the output files of `get_eph.py`.
+`dat` is a txt file that contains all of the resulting ephemerides at the time of transit, as `grepped` from the output files of `get_eph.py`.
 
 Observing Plan Rough Cut
 ------------------------
@@ -62,7 +62,7 @@ Observing Plan Rough Cut
 Convenience Scripts
 -------------------
 
-When writing the paper, a few convenience scripts were made to pring out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`. The file `mcmc.py` runs a fast and simple MCMC to determine the power law formulation of the super(?) diffuse phase function. It reads in `mags-streaks.mcmc`, which is just like `mags-streaks.dat`, but with the outliers commented out.
+When writing the paper, a few convenience scripts were made to print out relevant information.  This is the purpose of `printrates.py` and `printtable.py`, which both print observational information from `plan.ran`. The file `mcmc.py` runs a fast and simple MCMC to determine the power law formulation of the super(?) diffuse phase function. It reads in `mags-streaks.mcmc`, which is just like `mags-streaks.dat`, but with the outliers commented out.
 
 Calibrated Images
 -----------------
