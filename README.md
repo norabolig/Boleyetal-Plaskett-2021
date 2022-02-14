@@ -14,6 +14,8 @@ Basic reduction scripts can be found at: https://github.com/norabolig/ABIRL
 
 Astrometric calibration used astrometry.net software, installed and run locally.
 
+Raw data can be retrieved using the information in the file `raw-files.list`.
+
 Main Photometry File
 --------------------
 
