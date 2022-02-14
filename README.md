@@ -1,6 +1,8 @@
 # Boleyetal-Plaskett-2021
 Associated data for Boley et al. 2021 (submitted), Plaskett measurements of Starlink satellites: http://arxiv.org/abs/2109.12494
 
+[![DOI](https://zenodo.org/badge/408181621.svg)](https://zenodo.org/badge/latestdoi/408181621)
+
 Supplemental Data
 =================
 
