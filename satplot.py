@@ -63,7 +63,7 @@ plt.savefig("hist-apparent.pdf")
 fig,ax=plt.subplots()
 plt.hist(MAGSRound,bins=edges,color='steelblue',edgecolor='black')
 plt.hist(MAGSRound[vflag],bins=edges,color='red',edgecolor='black')
-plt.title("Absolute Magnitudes (550 km)",fontsize=16)
+plt.title("Range Corrected Magnitudes (550 km)",fontsize=16)
 plt.xlabel(r"$H_g^{550}$",fontsize=16)
 plt.ylabel(r"Number",fontsize=16)
 plt.xticks(fontsize=16)
@@ -83,8 +83,8 @@ pointnum = np.array(range(1,len(magsRound)+1))
 satrange=df['range']
 
 fig,ax=plt.subplots()
-ax.scatter(satrange[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(satrange[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
+ax.scatter(satrange[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(satrange[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(satrange[i],magsRound[i]),ha='center',va= 'center')
 ax.legend(['S','V'],loc='lower left',fontsize=12)
@@ -97,8 +97,8 @@ plt.savefig("sats-range.pdf")
 
 sto=df['sto']
 fig,ax=plt.subplots()
-ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
+ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],magsRound[i]),ha='center',va= 'center')
 ax.legend(['S','V'],loc='lower right',fontsize=12)
@@ -110,8 +110,8 @@ plt.ylim(10.5,4)
 plt.savefig("sats-sto.pdf")
 
 fig,ax=plt.subplots()
-ax.scatter(sto[sflag],satrange[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(sto[vflag],satrange[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
+ax.scatter(sto[sflag],satrange[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(sto[vflag],satrange[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],satrange[i]),ha='center',va= 'center')
 ax.legend(['S','V'],loc='lower left',fontsize=12)
@@ -125,8 +125,8 @@ plt.savefig("sats-sto-range.pdf")
 import matplotlib.dates as mdates
 
 fig,ax=plt.subplots()
-ax.scatter(dates[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(dates[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
+ax.scatter(dates[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(dates[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(dates[i],magsRound[i]),ha='center',va= 'center')
 ax.legend(['S','V'],loc='lower right',fontsize=12)
@@ -162,10 +162,10 @@ dpower  = diffusePower(1.1,sto,satrange,3.1)
 diff = magsRound-dpower
 
 fig,ax=plt.subplots()
-ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
-ax.scatter(sto,dsphere,s=120,color='red',marker='v')
-ax.scatter(sto,dpower,s=120,color='blue',marker='^')
+ax.scatter(sto[sflag],magsRound[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(sto[vflag],magsRound[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
+ax.scatter(sto,dsphere,s=120,color='orange',marker='v')
+ax.scatter(sto,dpower,s=120,color='gray',marker='^')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],magsRound[i]),ha='center',va= 'center')
 ax.legend(['S','V','D','P'],loc='lower right',fontsize=12)
@@ -177,8 +177,8 @@ plt.ylim(10.5,4)
 plt.savefig("sats-sto-diffuse.pdf")
 
 fig,ax=plt.subplots()
-ax.scatter(sto[sflag],diff[sflag],s=200,facecolors='none',edgecolors='black',marker='s')
-ax.scatter(sto[vflag],diff[vflag],s=200,facecolors='none',edgecolors='black',marker='o')
+ax.scatter(sto[sflag],diff[sflag],s=200,facecolors='none',edgecolors='steelblue',marker='s')
+ax.scatter(sto[vflag],diff[vflag],s=200,facecolors='none',edgecolors='red',marker='o')
 for i in range(len(magsRound)):
    ax.annotate(repr(pointnum[i]),(sto[i],diff[i]),ha='center',va= 'center')
 ax.legend(['S','V'],loc='lower right',fontsize=12)
