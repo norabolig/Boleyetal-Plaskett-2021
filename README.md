@@ -3,6 +3,8 @@ Associated data for Boley et al. 2021 (submitted), Plaskett measurements of Star
 
 [![DOI](https://zenodo.org/badge/408181621.svg)](https://zenodo.org/badge/latestdoi/408181621)
 
+LICENCE (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
+
 Supplemental Data
 =================
 
